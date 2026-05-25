@@ -1,0 +1,247 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-05-25",
+  "project_metadata": {
+    "name": "Alma Enterprises",
+    "domain": "https://alma-enterprises.co.uk",
+    "project_root": "/home/chubert/omni-builder/sites/site_alma",
+    "tagline": "",
+    "email": "",
+    "phone": "07931 476 744"
+  },
+  "architecture_contract": {
+    "source_of_truth": "data/pages.json",
+    "directory_roles": {
+      "theme/": "Core templates",
+      "_includes/": "Shared reusable components",
+      "data/": "Authoritative source data (pages.json)",
+      "build/": "Generated output only - do not edit"
+    },
+    "protected_files": {
+      "generated": [
+        "build/*"
+      ],
+      "manual_only": [
+        "data/*",
+        "theme/*",
+        "_includes/*"
+      ]
+    },
+    "cookie_banner": {
+      "status": "inlined",
+      "location": "theme/base.html",
+      "notes": "Cookie banner inlined directly into base.html \u2014 engine has no include system. Do not use {% include %} tags."
+    }
+  },
+  "data_schema": {
+    "pages.json": {
+      "total_pages": 913,
+      "slugs": "see pages.json \u2014 too many to list",
+      "fields_detected": [
+        "slug",
+        "title",
+        "body_content"
+      ]
+    }
+  },
+  "build_pipeline": {
+    "generator": "omni-builder",
+    "build_root": "/home/chubert/omni-builder",
+    "template_token": "{{ content }}",
+    "all_sites_build_command": "cd /home/chubert/omni-builder && python3 engine/build_sites.py",
+    "single_site_build_command": "cd /home/chubert/omni-builder && python3 -c \"from engine.build_sites import build_single_site; build_single_site('sites/site_alma')\"",
+    "serve_command": "cd /home/chubert/omni-builder/sites/site_alma/build && python3 -m http.server 8000",
+    "notes": "Engine does plain string replace only. base.html must use {{ content }} exclusively. All includes must be inlined into base.html. Never append serve command to build command.",
+    "engine_fix": "if __name__ == __main__ guard added to build_sites.py"
+  },
+  "ai_governance": {
+    "rules": [
+      "Never guess paths or filenames",
+      "Always prefer minimal fixes",
+      "Never duplicate components",
+      "Preserve single source of truth (data/pages.json)",
+      "Respect all protected directories",
+      "Validate against actual project structure",
+      "Master Report must be appended only - never delete fields",
+      "Single site build command for development, all sites for production only"
+    ]
+  },
+  "changelog": [
+    {
+      "date": "2026-05-25",
+      "change": "Master Report auto-generated from real site structure by omni-builder AI assistant."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Engine fix: if __name__ == __main__ guard added to build_sites.py \u2014 import no longer triggers full loop across all sites."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "base.html must use {{ content }} only \u2014 engine does plain string replace, no Jinja2, no {% %} tags supported."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Global components (header, cookie banner) must be inlined directly into theme/base.html \u2014 engine has no include system."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "assets/ directory must be copied into build/ or served from project root \u2014 build/ directory only contains generated HTML."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Never append serve command to build command \u2014 if server already running on port 8000 it will throw OSError. Build only, then refresh browser."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Images migrated from Jekyll project to assets/images (19 files)."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Migration confirmed complete. Jekyll _data files not required \u2014 all content rendered into pages.json. Images migrated."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Cookie banner inlined into base.html for all sites. Jekyll {% include %} tags removed and replaced with working inlined HTML."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "CSS files migrated from Jekyll _site compiled output into assets/css/. Assets copied into build/. assets/ must be re-copied into build/ after every build."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Added known_issue: body_content must never contain full standalone HTML \u2014 double header/footer risk on all sites migrated from Jekyll."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Added known_issue: use Jekyll _site compiled output as body_content source of truth where available. Extract <main> only."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "GitHub Actions deployment confirmed working for site_HCR. SSH key stored as SSH_PRIVATE_KEY secret. LFS enabled for pages.json. build.py in repo root. Workflow at .github/workflows/deploy.yml. Push to main triggers full build and rsync deploy to Plesk."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Deployment server and domain recorded: 217.154.45.205 / alma-enterprises.co.uk"
+    },
+    {
+      "date": "2026-05-25",
+      "change": "base.html fully fixed: all Jekyll tags removed, {{ content }} token confirmed, navigation and footer inlined, broken JS references removed, CSS paths hardcoded to /assets/css/."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Build confirmed SUCCESS after base.html fix. Assets copied to build/."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Master Report updated: content_status added, assets.css_files recorded, deployment_workflow gap noted (no GitHub Actions configured), known_issues updated."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Homepage added to pages.json (slug: index) \u2014 body_content extracted from Jekyll _site/index.html <main> using add_index.py script."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "build/index.html created by copying build/index/index.html \u2014 homepage confirmed rendering correctly at localhost:8000."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Bulk extracted 898 pages from Jekyll _site into pages.json. 9 skipped (no <main>). Total pages now: 904"
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Fixed 1 skipped pages (no <main> tag) by extracting <body> minus nav/footer: ['about-us']"
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Fixed 8 service pages (no html/body tags) by stripping nav/footer from raw content: ['services/end-of-tenancy-clearance', 'services/bereavement-clearance', 'services/commercial-clearance', 'services/house-clearance', 'services/garage-clearance', 'services/loft-clearance', 'services/hoarder-clearance', 'services/probate-clearance']"
+    },
+    {
+      "date": "2026-05-25",
+      "change": "about-us page re-extracted: <style> block pulled from <head> and prepended to body content. Previous extraction missed styles causing broken hero and trust-banner layout."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Full alma build confirmed: 913 pages in pages.json, all service pages and location pages extracted from Jekyll _site. build/ rebuilt and assets copied."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Live crawl from https://alma-enterprises.co.uk: 0 pages added, 36 updated. Top-level, service hubs, one example per service-location."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Stripped Jekyll tags from theme/base.html (site.baseurl, site.url, include, block, if, for, etc.)."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Bulk build: SUCCESS. All 27 sites processed."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Full bulk build of all 27 sites completed successfully. All sites now have a base.html template and build without errors."
+    },
+    {
+      "date": "2026-05-25",
+      "change": "Added GitHub Actions build-only workflow (no rsync). Created build.py and .gitattributes."
+    }
+  ],
+  "known_issues": {
+    "template_tags_in_base": "base.html may contain {% %} or {{ title }} tags the engine cannot process \u2014 use {{ content }} only",
+    "includes_not_rendered": "FIXED 2026-05-25 \u2014 navigation and footer inlined into base.html. _includes/ directory retained but not used by engine.",
+    "assets_not_in_build": "assets/ directory is not copied to build/ automatically \u2014 serve from project root or copy manually",
+    "port_clash": "always check port 8000 is free before serving \u2014 build only and refresh if server already running",
+    "assets_build_sync": "assets/ must be re-copied into build/ after every build \u2014 cp -r assets/ build/assets/ from each site root",
+    "body_content_full_html": "body_content must never contain full standalone HTML documents (no <!DOCTYPE>, <html>, <head>, <body> tags). Strip to <main> contents only. Full documents cause double header/footer when wrapped by base.html. Fix: re.search(r\"<main[^>]*>(.*?)</main>\", body, re.DOTALL)",
+    "jekyll_site_source_of_truth": "Where a matching Jekyll source exists at /home/chubert/<PROJECT>/_site/, use compiled _site HTML as body_content source of truth. Extract <main> contents only. Never use AI-rewritten content when compiled source exists.",
+    "github_secret_name": "GitHub secret MUST be named SSH_PRIVATE_KEY \u2014 workflow references secrets.SSH_PRIVATE_KEY. Any other name causes Permission denied on rsync.",
+    "lfs_checkout": "pages.json tracked via Git LFS \u2014 workflow checkout must include lfs: true or build fails with empty JSON error.",
+    "build_script": "build.py must exist in repo root \u2014 GitHub Actions runner calls python3 build.py directly.",
+    "yaml_multiline": "Never embed multiline Python in deploy.yml \u2014 always use a separate build.py script to avoid YAML syntax errors.",
+    "base_html_jekyll_tags": "FIXED 2026-05-25 \u2014 removed all Jekyll tags from base.html. site.title, site.baseurl, prepend filters, block/endblock all replaced. Navigation and footer inlined directly.",
+    "missing_js_assets": "cookieconsent.umd.js and cookie-init.js referenced in base.html but do not exist in assets/js/ \u2014 removed references from base.html on 2026-05-25. CSS only retained.",
+    "homepage_slug": "Engine builds index slug as build/index/index.html \u2014 must be manually copied to build/index.html after every build: cp build/index/index.html build/index.html",
+    "head_styles_in_jekyll": "Some Jekyll pages store CSS in <head> <style> blocks rather than inline \u2014 extractor must pull <style> block from <head> AND strip nav/footer from body. Affects pages using custom layouts without <main> tags. Fix: extract style block separately and prepend to body content."
+  },
+  "assets": {
+    "images_migrated": true,
+    "images_path": "assets/images",
+    "image_count": 19,
+    "migration_date": "2026-05-25",
+    "source": "/home/chubert/alma/assets/images",
+    "css_files": [
+      "assets/css/main.css",
+      "assets/css/cookieconsent.css"
+    ],
+    "js_files": "none \u2014 cookieconsent JS missing, references removed from base.html"
+  },
+  "migration": {
+    "status": "complete",
+    "jekyll_data_files_required": false,
+    "reason": "All Jekyll _data, _layouts, _includes content already rendered into data/pages.json body_content fields.",
+    "images_migrated": true,
+    "old_jekyll_root": "/home/chubert/alma"
+  },
+  "deployment_workflow": {
+    "server": "217.154.45.205",
+    "domain": "alma-enterprises.co.uk",
+    "plesk_path": "/var/www/vhosts/alma-enterprises.co.uk/httpdocs/",
+    "deploy_user": "root",
+    "github_repo": "not configured \u2014 no git remote set, no .github/workflows/deploy.yml exists",
+    "workflow_status": "not set up",
+    "github_secret": "SSH_PRIVATE_KEY (required when workflow is created)",
+    "github_actions_status": "build-only workflow added (no Plesk)",
+    "workflow_file": ".github/workflows/deploy.yml",
+    "notes": "Deployment to Plesk not configured; artifact uploads build/"
+  },
+  "content_status": {
+    "pages_built": "913 total pages",
+    "base_html_status": "clean \u2014 engine-compatible, no Jekyll tags, navigation and footer inlined",
+    "assets_in_build": true,
+    "last_build": "2026-05-25",
+    "build_result": "SUCCESS",
+    "homepage": "build/index.html \u2014 copied from build/index/index.html after build",
+    "homepage_source": "Jekyll _site/index.html <main> extracted \u2014 no AI rewrite",
+    "jekyll_source": "/home/chubert/alma/_site",
+    "live_crawl": "Crawled 2026-05-25: 0 added, 36 updated from https://alma-enterprises.co.uk",
+    "all_sites_built": true
+  }
+}

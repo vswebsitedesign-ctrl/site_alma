@@ -1,0 +1,16 @@
+baseurl: ''
+collections:
+  generated:
+    output: true
+    permalink: /:path/
+collections_dir: .
+exclude:
+- _source/
+- _collections/
+- Gemfile
+- Gemfile.lock
+permalink: pretty
+primary_phone: 07931 476 744
+site_name: alma
+title: Alma Enterprises
+url: https://alma-enterprises.co.uk
