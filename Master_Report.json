@@ -268,6 +268,10 @@
     {
       "date": "2026-06-01",
       "change": "favicon.ico created in brand colour #002D62, added to assets/, build/, deployed to httpdocs/. Link tag added to base.html. Fixes Googlebot-Image 404 on every crawl visit."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Accessibility fix corrected: iframe title attribute was not inserted on first attempt due to multiline tag structure. Fixed by targeting newline after <iframe. Title confirmed present in pages.json and deployed. 793 pages updated. Target: 100 Accessibility score."
     }
   ],
   "known_issues": {
@@ -403,7 +407,7 @@
       "issue": "iframe elements missing title attribute",
       "selector": "main > section > div > iframe",
       "fix": "title attribute added to all Google Maps iframes in pages.json body_content",
-      "status": "FIXED 2026-06-01"
+      "status": "FIXED 2026-06-01 \u2014 multiline iframe tag required newline-aware replace. Confirmed in pages.json and deployed."
     }
   ]
 }
