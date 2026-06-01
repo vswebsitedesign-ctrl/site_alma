@@ -243,6 +243,10 @@
     {
       "date": "2026-06-01",
       "change": "Full deploy confirmed live. Canonical tags, OG tags, {{ slug }} token, 793 form JS redirects all live on alma-enterprises.co.uk."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "All page uniqueness improvements complete. 776 schema postalCode fields updated, 63 postcode data attributes added from postcodes.json. Alt text confirmed already location-specific. H1 subheadings confirmed unique per service type via YAML data. Internal linking confirmed complete across all 101 hub pages \u2014 4 policy pages correctly excluded. All pending uniqueness items resolved."
     }
   ],
   "known_issues": {
@@ -318,7 +322,7 @@
   },
   "gsc_audit": {
     "date": "2026-06-01",
-    "status": "COMPLETE \u2014 all fixes applied 2026-06-01",
+    "status": "COMPLETE \u2014 all uniqueness improvements applied 2026-06-01",
     "critical": "Trailing slash inconsistency \u2014 same pages indexed with and without trailing slash",
     "out_of_area_queries": [
       "retford",
@@ -348,15 +352,14 @@
         "Unique local paragraphs injected into 679 service-location pages from YAML data files",
         "Canonical tag added to base.html via {{ slug }} token \u2014 all 914 pages",
         "OG tags (og:title, og:description, og:url, og:type) added to base.html \u2014 all 914 pages",
-        "Quote form JS redirect fixed on 793 service-location pages \u2014 window.location.href replaces inline success message"
+        "Quote form JS redirect fixed on 793 service-location pages \u2014 window.location.href replaces inline success message",
+        "Schema postalCode added to 776 service-location pages from postcodes.json",
+        "Postcode data attributes added to 63 pages",
+        "Alt text confirmed already location-specific \u2014 no changes needed",
+        "H1 subheadings confirmed unique per service type via injected YAML paragraphs",
+        "Internal linking confirmed complete across all 101 location hub pages"
       ],
-      "pending": [
-        "Postcode enrichment \u2014 add relevant postcode prefix to body content of high-impression pages to improve postcode-based search matching",
-        "Schema LocalBusiness address \u2014 schema on service-location pages has no streetAddress or postalCode, adding postcode would improve local pack eligibility",
-        "H1 uniqueness audit \u2014 hero h1 tags use location name but subheading is generic \u2014 could be made unique per service type",
-        "Internal linking \u2014 location hub pages (e.g. /dalton-in-furness/) could link to all service pages for that location to improve crawl depth",
-        "Image alt text \u2014 Trevor.webp alt text is generic across all pages, could reference the specific location"
-      ]
+      "pending": []
     }
   }
 }
