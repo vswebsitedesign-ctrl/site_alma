@@ -40,14 +40,15 @@
       "fields_detected": [
         "slug",
         "title",
-        "body_content"
+        "body_content",
+        "description"
       ]
     }
   },
   "build_pipeline": {
     "generator": "omni-builder",
     "build_root": "/home/chubert/omni-builder",
-    "template_token": "{{ content }}, {{ description }}",
+    "template_token": "{{ content }}, {{ title }}, {{ description }}, {{ slug }}",
     "all_sites_build_command": "cd /home/chubert/omni-builder && python3 engine/build_sites.py",
     "single_site_build_command": "cd /home/chubert/omni-builder && python3 -c \"from engine.build_sites import build_single_site; build_single_site('sites/site_alma')\"",
     "serve_command": "cd /home/chubert/omni-builder/sites/site_alma/build && python3 -m http.server 8000",
@@ -247,10 +248,18 @@
     {
       "date": "2026-06-01",
       "change": "All page uniqueness improvements complete. 776 schema postalCode fields updated, 63 postcode data attributes added from postcodes.json. Alt text confirmed already location-specific. H1 subheadings confirmed unique per service type via YAML data. Internal linking confirmed complete across all 101 hub pages \u2014 4 policy pages correctly excluded. All pending uniqueness items resolved."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Master Report housekeeping: template_token updated to include {{ title }} and {{ slug }}, fields_detected updated to include description, known_issues.template_tags_in_base updated to reflect all four supported tokens."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Unique meta descriptions generated and deployed for 898 pages. Service-location pages include service type, location name and postcode. Hub pages include location and postcode. Service index pages include service type and area. All pages now have unique descriptions \u2014 generic fallback no longer needed for any page."
     }
   ],
   "known_issues": {
-    "template_tags_in_base": "base.html may contain {% %} or {{ title }} tags the engine cannot process \u2014 use {{ content }} only",
+    "template_tags_in_base": "FIXED 2026-06-01 \u2014 engine supports {{ content }}, {{ title }}, {{ description }}, {{ slug }} tokens. All four active in base.html. No other token types supported \u2014 no Jinja2, no {% %} tags.",
     "includes_not_rendered": "FIXED 2026-05-25 \u2014 navigation and footer inlined into base.html. _includes/ directory retained but not used by engine.",
     "assets_not_in_build": "assets/ directory is not copied to build/ automatically \u2014 serve from project root or copy manually",
     "port_clash": "always check port 8000 is free before serving \u2014 build only and refresh if server already running",
@@ -344,7 +353,7 @@
       "3. Noindex out-of-service-area pages",
       "4. Improve CTR on high-impression pages"
     ],
-    "meta_descriptions": "Per-page descriptions added to 10 high-impression pages. All other pages use engine default fallback.",
+    "meta_descriptions": "Unique descriptions on all 908 pages. Generated from slug + postcodes.json. Deployed 2026-06-01.",
     "uniqueness_improvements": {
       "completed": [
         "Per-page title tags via {{ title }} token \u2014 all 914 pages",
@@ -357,7 +366,8 @@
         "Postcode data attributes added to 63 pages",
         "Alt text confirmed already location-specific \u2014 no changes needed",
         "H1 subheadings confirmed unique per service type via injected YAML paragraphs",
-        "Internal linking confirmed complete across all 101 location hub pages"
+        "Internal linking confirmed complete across all 101 location hub pages",
+        "Unique meta descriptions generated for 898 remaining pages \u2014 all 908 pages now have unique descriptions"
       ],
       "pending": []
     }
