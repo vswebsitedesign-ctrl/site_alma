@@ -1,0 +1,692 @@
+- name: Abbeytown
+  slug: abbeytown
+  nearby:
+    - wigton
+    - aspatria
+    - silloth
+
+- name: Allithwaite
+  slug: allithwaite
+  nearby:
+    - grange-over-sands
+    - flookburgh
+    - lindale
+
+- name: Alston
+  slug: alston
+  nearby:
+    - penrith
+    - brampton
+    - haltwhistle
+
+- name: Ambleside
+  slug: ambleside
+  nearby:
+    - grasmere
+    - windermere
+    - keswick
+
+- name: Appleby-in-Westmorland
+  slug: appleby-in-westmorland
+  nearby:
+    - penrith
+    - kirkby-stephen
+    - shap
+
+- name: Arlecdon
+  slug: arlecdon
+  nearby:
+    - frizington
+    - cleator-moor
+    - whitehaven
+
+- name: Arnside
+  slug: arnside
+  nearby:
+    - milnthorpe
+    - grange-over-sands
+    - carnforth
+
+- name: Askam-in-Furness
+  slug: askam-in-furness
+  nearby:
+    - dalton-in-furness
+    - barrow-in-furness
+    - ulverston
+
+- name: Aspatria
+  slug: aspatria
+  nearby:
+    - wigton
+    - maryport
+    - silloth
+
+- name: Barrow-in-Furness
+  slug: barrow-in-furness
+  nearby:
+    - dalton-in-furness
+    - askam-in-furness
+    - ulverston
+
+- name: Beckermet
+  slug: beckermet
+  nearby:
+    - egremont
+    - seascale
+    - st-bees
+
+- name: Bowness-on-Windermere
+  slug: bowness-on-windermere
+  nearby:
+    - windermere
+    - ambleside
+    - kendal
+
+- name: Brampton
+  slug: brampton
+  nearby:
+    - carlisle
+    - longtown
+    - haltwhistle
+
+- name: Brigham
+  slug: brigham
+  nearby:
+    - cockermouth
+    - great-broughton
+    - workington
+
+- name: Brough
+  slug: brough
+  nearby:
+    - kirkby-stephen
+    - appleby-in-westmorland
+    - sedbergh
+
+- name: Broughton-in-Furness
+  slug: broughton-in-furness
+  nearby:
+    - ulverston
+    - coniston
+    - kirkby-in-furness
+
+- name: Broughton Moor
+  slug: broughton-moor
+  nearby:
+    - cockermouth
+    - maryport
+    - great-broughton
+
+- name: Burgh-by-Sands
+  slug: burgh-by-sands
+  nearby:
+    - carlisle
+    - wigton
+    - longtown
+
+- name: Burneside
+  slug: burneside
+  nearby:
+    - kendal
+    - staveley
+    - windermere
+
+- name: Burton-in-Kendal
+  slug: burton-in-kendal
+  nearby:
+    - kendal
+    - carnforth
+    - milnthorpe
+
+- name: Cargo
+  slug: cargo
+  nearby:
+    - carlisle
+    - longtown
+    - wigton
+
+- name: Carlisle
+  slug: carlisle
+  nearby:
+    - wigton
+    - penrith
+    - brampton
+
+- name: Carnforth
+  slug: carnforth
+  nearby:
+    - lancaster
+    - milnthorpe
+    - burton-in-kendal
+
+- name: Cleator Moor
+  slug: cleator-moor
+  nearby:
+    - whitehaven
+    - frizington
+    - egremont
+
+- name: Clifton
+  slug: clifton
+  nearby:
+    - penrith
+    - shap
+    - stainton
+
+- name: Cockermouth
+  slug: cockermouth
+  nearby:
+    - workington
+    - keswick
+    - maryport
+
+- name: Coniston
+  slug: coniston
+  nearby:
+    - ambleside
+    - ulverston
+    - hawkshead
+
+- name: Crosby
+  slug: crosby
+  nearby:
+    - maryport
+    - workington
+    - aspatria
+
+- name: Cumberland
+  slug: cumberland
+  nearby:
+    - carlisle
+    - workington
+    - whitehaven
+
+- name: Cumbria
+  slug: cumbria
+  nearby:
+    - carlisle
+    - kendal
+    - barrow-in-furness
+
+- name: Cumwhinton
+  slug: cumwhinton
+  nearby:
+    - carlisle
+    - penrith
+    - wetheral
+
+- name: Dalston
+  slug: dalston
+  nearby:
+    - carlisle
+    - wigton
+    - penrith
+
+- name: Dalton-in-Furness
+  slug: dalton-in-furness
+  nearby:
+    - barrow-in-furness
+    - ulverston
+    - askam-in-furness
+
+- name: Dearham
+  slug: dearham
+  nearby:
+    - maryport
+    - cockermouth
+    - workington
+
+- name: Distington
+  slug: distington
+  nearby:
+    - workington
+    - whitehaven
+    - maryport
+
+- name: Egremont
+  slug: egremont
+  nearby:
+    - whitehaven
+    - cleator-moor
+    - beckermet
+
+- name: Endmoor
+  slug: endmoor
+  nearby:
+    - kendal
+    - milnthorpe
+    - burton-in-kendal
+
+- name: Flimby
+  slug: flimby
+  nearby:
+    - maryport
+    - workington
+    - aspatria
+
+- name: Flookburgh
+  slug: flookburgh
+  nearby:
+    - grange-over-sands
+    - allithwaite
+    - cartmel
+
+- name: Frizington
+  slug: frizington
+  nearby:
+    - cleator-moor
+    - arlecdon
+    - whitehaven
+
+- name: Gosforth
+  slug: gosforth
+  nearby:
+    - seascale
+    - egremont
+    - wasdale
+
+- name: Grange-over-Sands
+  slug: grange-over-sands
+  nearby:
+    - allithwaite
+    - arnside
+    - lindale
+
+- name: Grasmere
+  slug: grasmere
+  nearby:
+    - ambleside
+    - keswick
+    - windermere
+
+- name: Great Broughton
+  slug: great-broughton
+  nearby:
+    - cockermouth
+    - brigham
+    - workington
+
+- name: Great Clifton
+  slug: great-clifton
+  nearby:
+    - workington
+    - cockermouth
+    - distington
+
+- name: Greystoke
+  slug: greystoke
+  nearby:
+    - penrith
+    - keswick
+    - wigton
+
+- name: Haverigg
+  slug: haverigg
+  nearby:
+    - millom
+    - barrow-in-furness
+    - askam-in-furness
+
+- name: Hayton
+  slug: hayton
+  nearby:
+    - brampton
+    - carlisle
+    - penrith
+
+- name: High Harrington
+  slug: high-harrington
+  nearby:
+    - workington
+    - distington
+    - maryport
+
+- name: Holme
+  slug: holme
+  nearby:
+    - milnthorpe
+    - burton-in-kendal
+    - carnforth
+
+- name: Houghton
+  slug: houghton
+  nearby:
+    - carlisle
+    - wigton
+    - penrith
+
+- name: Kendal
+  slug: kendal
+  nearby:
+    - windermere
+    - milnthorpe
+    - sedbergh
+
+- name: Keswick
+  slug: keswick
+  nearby:
+    - cockermouth
+    - ambleside
+    - penrith
+
+- name: Kirby Thore
+  slug: kirby-thore
+  nearby:
+    - appleby-in-westmorland
+    - penrith
+    - shap
+
+- name: Kirkby-in-Furness
+  slug: kirkby-in-furness
+  nearby:
+    - ulverston
+    - dalton-in-furness
+    - broughton-in-furness
+
+- name: Kirkby Lonsdale
+  slug: kirkby-lonsdale
+  nearby:
+    - sedbergh
+    - kendal
+    - carnforth
+
+- name: Kirkby Stephen
+  slug: kirkby-stephen
+  nearby:
+    - appleby-in-westmorland
+    - brough
+    - sedbergh
+
+- name: Lancaster
+  slug: lancaster
+  nearby:
+    - morecambe
+    - carnforth
+    - milnthorpe
+
+- name: Langwathby
+  slug: langwathby
+  nearby:
+    - penrith
+    - appleby-in-westmorland
+    - brampton
+
+- name: Lazonby
+  slug: lazonby
+  nearby:
+    - penrith
+    - brampton
+    - carlisle
+
+- name: Levens
+  slug: levens
+  nearby:
+    - kendal
+    - milnthorpe
+    - grange-over-sands
+
+- name: Lindale
+  slug: lindale
+  nearby:
+    - grange-over-sands
+    - kendal
+    - windermere
+
+- name: Little Broughton
+  slug: little-broughton
+  nearby:
+    - cockermouth
+    - great-broughton
+    - brigham
+
+- name: Long Marton
+  slug: long-marton
+  nearby:
+    - appleby-in-westmorland
+    - penrith
+    - kirkby-stephen
+
+- name: Longtown
+  slug: longtown
+  nearby:
+    - carlisle
+    - brampton
+    - canonbie
+
+- name: Lowca
+  slug: lowca
+  nearby:
+    - whitehaven
+    - workington
+    - distington
+
+- name: Maryport
+  slug: maryport
+  nearby:
+    - workington
+    - aspatria
+    - cockermouth
+
+- name: Millom
+  slug: millom
+  nearby:
+    - haverigg
+    - broughton-in-furness
+    - askam-in-furness
+
+- name: Milnthorpe
+  slug: milnthorpe
+  nearby:
+    - kendal
+    - arnside
+    - carnforth
+
+- name: Moor Row
+  slug: moor-row
+  nearby:
+    - cleator-moor
+    - whitehaven
+    - egremont
+
+- name: Morecambe
+  slug: morecambe
+  nearby:
+    - lancaster
+    - carnforth
+    - heysham
+
+- name: Moresby Parks
+  slug: moresby-parks
+  nearby:
+    - whitehaven
+    - distington
+    - workington
+
+- name: Natland
+  slug: natland
+  nearby:
+    - kendal
+    - milnthorpe
+    - levens
+
+- name: Oxenholme
+  slug: oxenholme
+  nearby:
+    - kendal
+    - staveley
+    - windermere
+
+- name: Parton
+  slug: parton
+  nearby:
+    - whitehaven
+    - distington
+    - workington
+
+- name: Penrith
+  slug: penrith
+  nearby:
+    - carlisle
+    - keswick
+    - appleby-in-westmorland
+
+- name: Rheda Park
+  slug: rheda-park
+  nearby:
+    - frizington
+    - cleator-moor
+    - whitehaven
+
+- name: Sandside
+  slug: sandside
+  nearby:
+    - milnthorpe
+    - arnside
+    - kendal
+
+- name: Scotby
+  slug: scotby
+  nearby:
+    - carlisle
+    - penrith
+    - brampton
+
+- name: Seascale
+  slug: seascale
+  nearby:
+    - gosforth
+    - beckermet
+    - egremont
+
+- name: Seaton
+  slug: seaton
+  nearby:
+    - workington
+    - distington
+    - maryport
+
+- name: Sedbergh
+  slug: sedbergh
+  nearby:
+    - kendal
+    - kirkby-lonsdale
+    - kirkby-stephen
+
+- name: Shap
+  slug: shap
+  nearby:
+    - penrith
+    - appleby-in-westmorland
+    - tebay
+
+- name: Silloth
+  slug: silloth
+  nearby:
+    - wigton
+    - aspatria
+    - maryport
+
+- name: St Bees
+  slug: st-bees
+  nearby:
+    - whitehaven
+    - egremont
+    - beckermet
+
+- name: Stainburn
+  slug: stainburn
+  nearby:
+    - workington
+    - great-clifton
+    - distington
+
+- name: Stainton
+  slug: stainton
+  nearby:
+    - penrith
+    - carlisle
+    - clifton
+
+- name: Staveley
+  slug: staveley
+  nearby:
+    - kendal
+    - windermere
+    - burneside
+
+- name: Storth
+  slug: storth
+  nearby:
+    - milnthorpe
+    - arnside
+    - kendal
+
+- name: Swarthmoor
+  slug: swarthmoor
+  nearby:
+    - ulverston
+    - dalton-in-furness
+    - barrow-in-furness
+
+- name: Thornhill
+  slug: thornhill
+  nearby:
+    - penrith
+    - carlisle
+    - shap
+
+- name: Thursby
+  slug: thursby
+  nearby:
+    - carlisle
+    - wigton
+    - aspatria
+
+- name: Ulverston
+  slug: ulverston
+  nearby:
+    - barrow-in-furness
+    - dalton-in-furness
+    - coniston
+
+- name: Warwick Bridge
+  slug: warwick-bridge
+  nearby:
+    - carlisle
+    - penrith
+    - wetheral
+
+- name: Wetheral
+  slug: wetheral
+  nearby:
+    - carlisle
+    - penrith
+    - brampton
+
+- name: Whitehaven
+  slug: whitehaven
+  nearby:
+    - workington
+    - egremont
+    - cleator-moor
+
+- name: Wigton
+  slug: wigton
+  nearby:
+    - carlisle
+    - aspatria
+    - penrith
+
+- name: Windermere
+  slug: windermere
+  nearby:
+    - kendal
+    - ambleside
+    - bowness-on-windermere
+
+- name: Workington
+  slug: workington
+  nearby:
+    - whitehaven
+    - maryport
+    - cockermouth

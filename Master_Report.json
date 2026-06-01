@@ -6,8 +6,8 @@
     "domain": "https://alma-enterprises.co.uk",
     "project_root": "/home/chubert/omni-builder/sites/site_alma",
     "tagline": "",
-    "email": "",
-    "phone": "07931 476 744"
+    "email": "info@alma-enterprises.co.uk",
+    "phone": "07932 521901"
   },
   "architecture_contract": {
     "source_of_truth": "data/pages.json",
@@ -47,12 +47,13 @@
   "build_pipeline": {
     "generator": "omni-builder",
     "build_root": "/home/chubert/omni-builder",
-    "template_token": "{{ content }}",
+    "template_token": "{{ content }}, {{ description }}",
     "all_sites_build_command": "cd /home/chubert/omni-builder && python3 engine/build_sites.py",
     "single_site_build_command": "cd /home/chubert/omni-builder && python3 -c \"from engine.build_sites import build_single_site; build_single_site('sites/site_alma')\"",
     "serve_command": "cd /home/chubert/omni-builder/sites/site_alma/build && python3 -m http.server 8000",
     "notes": "Engine does plain string replace only. base.html must use {{ content }} exclusively. All includes must be inlined into base.html. Never append serve command to build command.",
-    "engine_fix": "if __name__ == __main__ guard added to build_sites.py"
+    "engine_fix": "if __name__ == __main__ guard added to build_sites.py",
+    "full_deploy_command": "cd /home/chubert/omni-builder && python3 -c \"from engine.build_sites import build_single_site; build_single_site('sites/site_alma')\" && cp -r sites/site_alma/assets/ sites/site_alma/build/assets/ && cp sites/site_alma/build/index/index.html sites/site_alma/build/index.html && rsync -avz -e \"ssh -i ~/.ssh/github_actions_alma\" sites/site_alma/build/ root@217.154.45.205:/var/www/vhosts/alma-enterprises.co.uk/httpdocs/"
   },
   "ai_governance": {
     "rules": [
@@ -190,6 +191,58 @@
     {
       "date": "2026-05-25",
       "change": "Pushed to GitHub: remote set to https://github.com/vswebsitedesign-ctrl/site_alma.git. GitHub Actions will now build on push."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Phone number corrected to 07932 521901 in send.php and Master Report. Previous value 07931 476 744 was incorrect."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Full build deployed to live server via rsync. 914 pages including thank-you slug. send.php deployed individually to httpdocs/. Assets copied to build/. Homepage fix applied. Site live at alma-enterprises.co.uk."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "send.php email subject fixed: UTF-8 em dash replaced with ASCII hyphen to prevent garbled characters in email subject line. Redeployed individually via rsync."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Full session summary: send.php created and deployed. Fields: name, phone, postcode, service (mandatory), email, message (optional), _honeypot (spam trap). addAddress: info@alma-enterprises.co.uk. Phone: 07932 521901. Redirect: /thank-you/ via window.location.href. thank-you slug added to pages.json (914 total pages). Contact hero fixed: min-height, gradient lightened, text repositioned right to match homepage. JS fetch redirect fixed to window.location.href. Email subject UTF-8 em dash replaced with ASCII hyphen. All changes deployed to alma-enterprises.co.uk via rsync. send.php deployed individually."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "robots.txt generated from pages.json and deployed. sitemap.xml already existed on server \u2014 regenerated from pages.json and redeployed. Both generated at build time, never static files."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "sitemap.xml regenerated: excluded junk template slugs (footer, navigation, cta, location, service-location), fixed homepage URL from /index/ to /, fixed empty slug producing //. Redeployed to server."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "GSC audit completed. Key findings: trailing slash duplicates across service-location pages causing split impressions and redirect issues. Out-of-service-area queries identified (Retford, Doncaster, Penzance etc). High-impression zero-click pages identified for CTR improvement. Action plan logged."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "GSC audit fixes applied. Fix 1: trailing slashes already handled by Plesk 301 redirect at server level \u2014 no code change needed. Fix 2: sitemap confirmed clean \u2014 all URLs have trailing slashes. Fix 3: out-of-area queries (retford, doncaster, penzance etc) confirmed not present as pages in pages.json \u2014 no action needed. Fix 4: meta description hardcoded in base.html identified as CTR issue \u2014 engine updated to support {{ description }} token with fallback to default. base.html meta description to be updated to {{ description }} token. description field to be added to high-impression pages in pages.json."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Per-page meta descriptions implemented. Engine updated with {{ description }} token support and default fallback. base.html updated to use {{ description }} token. 10 high-impression pages given unique descriptions: services/house-clearance/dalton-in-furness, services/commercial-clearance/grange-over-sands, services/commercial-clearance/lancaster, services/house-clearance/haverigg, services/house-clearance/askam-in-furness, services/house-clearance/cumbria, services/commercial-clearance/morecambe, services/house-clearance/kirkby-in-furness, about-us, contact. Full rebuild and rsync deploy completed."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "679 service-location pages updated with unique local paragraphs injected from Service Location Paragraphs.txt and new_paragraphs.yml. Paragraphs inserted after hero section using <!-- 2. FAST ANSWERS --> anchor. Covers house, garage, hoarder, commercial, loft, end-of-tenancy, and probate clearance service types. Full rebuild and rsync deploy completed."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Full deploy command recorded in build_pipeline.full_deploy_command. Canonical standard: build \u2192 cp assets \u2192 cp homepage fix \u2192 rsync to server. Must be used every session, never reconstructed from parts."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Canonical tag and OG tags added to base.html using {{ slug }}, {{ title }}, {{ description }} tokens. Duplicate hardcoded canonical removed. {{ slug }} token added to engine. 793 service-location page quote forms fixed to redirect via window.location.href to /thank-you/ instead of showing inline success message. Full rebuild and rsync deploy completed."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Full deploy confirmed live. Canonical tags, OG tags, {{ slug }} token, 793 form JS redirects all live on alma-enterprises.co.uk."
     }
   ],
   "known_issues": {
@@ -207,7 +260,11 @@
     "base_html_jekyll_tags": "FIXED 2026-05-25 \u2014 removed all Jekyll tags from base.html. site.title, site.baseurl, prepend filters, block/endblock all replaced. Navigation and footer inlined directly.",
     "missing_js_assets": "cookieconsent.umd.js and cookie-init.js referenced in base.html but do not exist in assets/js/ \u2014 removed references from base.html on 2026-05-25. CSS only retained.",
     "homepage_slug": "Engine builds index slug as build/index/index.html \u2014 must be manually copied to build/index.html after every build: cp build/index/index.html build/index.html",
-    "head_styles_in_jekyll": "Some Jekyll pages store CSS in <head> <style> blocks rather than inline \u2014 extractor must pull <style> block from <head> AND strip nav/footer from body. Affects pages using custom layouts without <main> tags. Fix: extract style block separately and prepend to body content."
+    "head_styles_in_jekyll": "Some Jekyll pages store CSS in <head> <style> blocks rather than inline \u2014 extractor must pull <style> block from <head> AND strip nav/footer from body. Affects pages using custom layouts without <main> tags. Fix: extract style block separately and prepend to body content.",
+    "contact_hero_inline_styles": "Contact page hero styles are inline in pages.json body_content \u2014 not in main.css. min-height, gradient and text alignment must be edited via pages.json.",
+    "form_fetch_redirect": "Contact form uses JS fetch \u2014 PHP header redirect ignored. Redirect must be handled via window.location.href in the fetch .then() block in pages.json body_content.",
+    "sitemap_exclude_slugs": "Sitemap generator must exclude template slugs: footer, navigation, cta, location, service-location and empty slugs. index slug must map to / not /index/.",
+    "meta_description_hardcoded": "FIXED 2026-06-01 \u2014 engine now supports {{ description }} token. base.html must use {{ description }} in meta description tag. Pages without description field fall back to default Cumbria/North Lancashire description."
   },
   "assets": {
     "images_migrated": true,
@@ -241,21 +298,65 @@
     "notes": "Deployment to Plesk not configured; artifact uploads build/",
     "git_initialized": true,
     "git_remote": "https://github.com/vswebsitedesign-ctrl/site_alma.git",
-    "server_ip": "NOT YET CONFIGURED",
-    "deploy_configured": false,
-    "deploy_status": "PENDING \u2014 no IP or deploy user set in workflow",
-    "recommended_method": "GitHub Actions + rsync over SSH as Plesk domain system user (not root) \u2014 see site_JKRS deploy.yml as reference implementation"
+    "server_ip": "217.154.45.205",
+    "deploy_configured": true,
+    "deploy_status": "LIVE \u2014 full deploy completed 2026-06-01 with canonical, OG tags, slug token, 793 form redirects fixed",
+    "recommended_method": "GitHub Actions + rsync over SSH as Plesk domain system user (not root) \u2014 see site_JKRS deploy.yml as reference implementation",
+    "ssh_key": "~/.ssh/github_actions_alma"
   },
   "content_status": {
-    "pages_built": "913 total pages",
+    "pages_built": "914 total pages",
     "base_html_status": "clean \u2014 engine-compatible, no Jekyll tags, navigation and footer inlined",
     "assets_in_build": true,
-    "last_build": "2026-05-25",
+    "last_build": "2026-06-01",
     "build_result": "SUCCESS",
     "homepage": "build/index.html \u2014 copied from build/index/index.html after build",
     "homepage_source": "Jekyll _site/index.html <main> extracted \u2014 no AI rewrite",
     "jekyll_source": "/home/chubert/alma/_site",
     "live_crawl": "Crawled 2026-05-25: 0 added, 36 updated from https://alma-enterprises.co.uk",
     "all_sites_built": true
+  },
+  "gsc_audit": {
+    "date": "2026-06-01",
+    "status": "COMPLETE \u2014 all fixes applied 2026-06-01",
+    "critical": "Trailing slash inconsistency \u2014 same pages indexed with and without trailing slash",
+    "out_of_area_queries": [
+      "retford",
+      "doncaster",
+      "durrington",
+      "whitehawk",
+      "penzance",
+      "edinburgh",
+      "brighton"
+    ],
+    "high_impression_zero_click": [
+      "/services/house-clearance/dalton-in-furness/",
+      "/services/commercial-clearance/grange-over-sands/",
+      "/about-us/"
+    ],
+    "action_plan": [
+      "1. Fix trailing slash canonicalisation",
+      "2. Regenerate sitemap with trailing slashes only",
+      "3. Noindex out-of-service-area pages",
+      "4. Improve CTR on high-impression pages"
+    ],
+    "meta_descriptions": "Per-page descriptions added to 10 high-impression pages. All other pages use engine default fallback.",
+    "uniqueness_improvements": {
+      "completed": [
+        "Per-page title tags via {{ title }} token \u2014 all 914 pages",
+        "Per-page meta descriptions via {{ description }} token \u2014 10 high-impression pages, all others use default fallback",
+        "Unique local paragraphs injected into 679 service-location pages from YAML data files",
+        "Canonical tag added to base.html via {{ slug }} token \u2014 all 914 pages",
+        "OG tags (og:title, og:description, og:url, og:type) added to base.html \u2014 all 914 pages",
+        "Quote form JS redirect fixed on 793 service-location pages \u2014 window.location.href replaces inline success message"
+      ],
+      "pending": [
+        "Postcode enrichment \u2014 add relevant postcode prefix to body content of high-impression pages to improve postcode-based search matching",
+        "Schema LocalBusiness address \u2014 schema on service-location pages has no streetAddress or postalCode, adding postcode would improve local pack eligibility",
+        "H1 uniqueness audit \u2014 hero h1 tags use location name but subheading is generic \u2014 could be made unique per service type",
+        "Internal linking \u2014 location hub pages (e.g. /dalton-in-furness/) could link to all service pages for that location to improve crawl depth",
+        "Image alt text \u2014 Trevor.webp alt text is generic across all pages, could reference the specific location"
+      ]
+    }
   }
 }
