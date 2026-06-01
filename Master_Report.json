@@ -272,6 +272,10 @@
     {
       "date": "2026-06-01",
       "change": "Accessibility fix corrected: iframe title attribute was not inserted on first attempt due to multiline tag structure. Fixed by targeting newline after <iframe. Title confirmed present in pages.json and deployed. 793 pages updated. Target: 100 Accessibility score."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "PageSpeed confirmed 100/100/100/100 \u2014 Performance, Accessibility, Best Practices, SEO. All scores perfect."
     }
   ],
   "known_issues": {
@@ -346,7 +350,8 @@
     "homepage_source": "Jekyll _site/index.html <main> extracted \u2014 no AI rewrite",
     "jekyll_source": "/home/chubert/alma/_site",
     "live_crawl": "Crawled 2026-05-25: 0 added, 36 updated from https://alma-enterprises.co.uk",
-    "all_sites_built": true
+    "all_sites_built": true,
+    "pagespeed": "100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO \u2014 confirmed 2026-06-01"
   },
   "gsc_audit": {
     "date": "2026-06-01",
