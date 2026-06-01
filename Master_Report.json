@@ -260,6 +260,10 @@
     {
       "date": "2026-06-01",
       "change": "Accessibility fix: title attribute added to all Google Maps iframes on 793 pages. Fixes PageSpeed accessibility audit failure. Target score 100 Accessibility."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "GSC actions completed: sitemap resubmitted at https://alma-enterprises.co.uk/sitemap.xml. Key pages submitted for indexing via URL Inspection tool: homepage, contact, about-us, services/house-clearance/dalton-in-furness, services/house-clearance/cumbria. Google recrawl expected within 24-48 hours."
     }
   ],
   "known_issues": {
@@ -375,7 +379,16 @@
         "Unique meta descriptions generated for 898 remaining pages \u2014 all 908 pages now have unique descriptions"
       ],
       "pending": []
-    }
+    },
+    "last_submission": "2026-06-01",
+    "sitemap_resubmitted": "2026-06-01",
+    "indexing_requested": [
+      "https://alma-enterprises.co.uk/",
+      "https://alma-enterprises.co.uk/contact/",
+      "https://alma-enterprises.co.uk/about-us/",
+      "https://alma-enterprises.co.uk/services/house-clearance/dalton-in-furness/",
+      "https://alma-enterprises.co.uk/services/house-clearance/cumbria/"
+    ]
   },
   "accessibility_pending": [
     {
