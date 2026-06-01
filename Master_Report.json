@@ -256,6 +256,10 @@
     {
       "date": "2026-06-01",
       "change": "Unique meta descriptions generated and deployed for 898 pages. Service-location pages include service type, location name and postcode. Hub pages include location and postcode. Service index pages include service type and area. All pages now have unique descriptions \u2014 generic fallback no longer needed for any page."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "Accessibility fix: title attribute added to all Google Maps iframes on 793 pages. Fixes PageSpeed accessibility audit failure. Target score 100 Accessibility."
     }
   ],
   "known_issues": {
@@ -277,7 +281,8 @@
     "contact_hero_inline_styles": "Contact page hero styles are inline in pages.json body_content \u2014 not in main.css. min-height, gradient and text alignment must be edited via pages.json.",
     "form_fetch_redirect": "Contact form uses JS fetch \u2014 PHP header redirect ignored. Redirect must be handled via window.location.href in the fetch .then() block in pages.json body_content.",
     "sitemap_exclude_slugs": "Sitemap generator must exclude template slugs: footer, navigation, cta, location, service-location and empty slugs. index slug must map to / not /index/.",
-    "meta_description_hardcoded": "FIXED 2026-06-01 \u2014 engine now supports {{ description }} token. base.html must use {{ description }} in meta description tag. Pages without description field fall back to default Cumbria/North Lancashire description."
+    "meta_description_hardcoded": "FIXED 2026-06-01 \u2014 engine now supports {{ description }} token. base.html must use {{ description }} in meta description tag. Pages without description field fall back to default Cumbria/North Lancashire description.",
+    "iframe_missing_title": "FIXED 2026-06-01 \u2014 title attribute added to all Google Maps iframes across 793 pages in pages.json. Title: Map showing Alma Enterprises clearance service location."
   },
   "assets": {
     "images_migrated": true,
@@ -371,5 +376,15 @@
       ],
       "pending": []
     }
-  }
+  },
+  "accessibility_pending": [
+    {
+      "date": "2026-06-01",
+      "audit": "PageSpeed / Lighthouse",
+      "issue": "iframe elements missing title attribute",
+      "selector": "main > section > div > iframe",
+      "fix": "title attribute added to all Google Maps iframes in pages.json body_content",
+      "status": "FIXED 2026-06-01"
+    }
+  ]
 }
