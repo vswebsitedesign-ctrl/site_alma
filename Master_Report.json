@@ -264,6 +264,10 @@
     {
       "date": "2026-06-01",
       "change": "GSC actions completed: sitemap resubmitted at https://alma-enterprises.co.uk/sitemap.xml. Key pages submitted for indexing via URL Inspection tool: homepage, contact, about-us, services/house-clearance/dalton-in-furness, services/house-clearance/cumbria. Google recrawl expected within 24-48 hours."
+    },
+    {
+      "date": "2026-06-01",
+      "change": "favicon.ico created in brand colour #002D62, added to assets/, build/, deployed to httpdocs/. Link tag added to base.html. Fixes Googlebot-Image 404 on every crawl visit."
     }
   ],
   "known_issues": {
@@ -286,7 +290,8 @@
     "form_fetch_redirect": "Contact form uses JS fetch \u2014 PHP header redirect ignored. Redirect must be handled via window.location.href in the fetch .then() block in pages.json body_content.",
     "sitemap_exclude_slugs": "Sitemap generator must exclude template slugs: footer, navigation, cta, location, service-location and empty slugs. index slug must map to / not /index/.",
     "meta_description_hardcoded": "FIXED 2026-06-01 \u2014 engine now supports {{ description }} token. base.html must use {{ description }} in meta description tag. Pages without description field fall back to default Cumbria/North Lancashire description.",
-    "iframe_missing_title": "FIXED 2026-06-01 \u2014 title attribute added to all Google Maps iframes across 793 pages in pages.json. Title: Map showing Alma Enterprises clearance service location."
+    "iframe_missing_title": "FIXED 2026-06-01 \u2014 title attribute added to all Google Maps iframes across 793 pages in pages.json. Title: Map showing Alma Enterprises clearance service location.",
+    "missing_favicon": "FIXED 2026-06-01 \u2014 favicon.ico created in brand blue #002D62, deployed to httpdocs/ and referenced in base.html."
   },
   "assets": {
     "images_migrated": true,
@@ -298,7 +303,8 @@
       "assets/css/main.css",
       "assets/css/cookieconsent.css"
     ],
-    "js_files": "none \u2014 cookieconsent JS missing, references removed from base.html"
+    "js_files": "none \u2014 cookieconsent JS missing, references removed from base.html",
+    "favicon": "assets/favicon.ico \u2014 brand blue #002D62, deployed 2026-06-01"
   },
   "migration": {
     "status": "complete",
