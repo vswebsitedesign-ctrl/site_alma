@@ -416,6 +416,10 @@
     {
       "date": "2026-06-14",
       "change": "Full GSC audit SEO session complete \u2014 911 pages built, all service index titles fixed, 693 service-location pages with unique locally-specific descriptions, 99 commercial clearance pages targeting removals and waste disposal queries, sitemap resubmitted, all critical issues resolved."
+    },
+    {
+      "date": "2026-06-14",
+      "change": "Fixed: 105 old flat Jekyll location hub pages excluded from build and sitemap via is_excluded() function in build.py. LEGITIMATE_FLAT_SLUGS whitelist added. Sitemap corrected from 911 to 806 clean service URLs. Deployed and resubmitted to GSC."
     }
   ],
   "known_issues": {
@@ -737,7 +741,7 @@
   "IMPORTANT_REMINDERS": {
     "sitemap_recheck": {
       "priority": "IMPORTANT",
-      "reminder": "Recheck GSC sitemap indexing status in 2 weeks from 2026-06-14 \u2014 target date 2026-06-28. Run GSC audit command to check Submitted vs Indexed count. Expected: Indexed should begin climbing from 0 toward 910 as Google recrawls. If still 0 after 2 weeks, investigate crawl budget and internal linking.",
+      "reminder": "Recheck GSC sitemap on 2026-06-28. Sitemap resubmitted 2026-06-14 with 806 correct URLs after flat slug exclusion fix. GSC may still show 910 until next crawl \u2014 expected to update within hours/days.",
       "gsc_check_command": "cd /home/chubert/omni-builder/sites/site_alma && python3 - <<'GSCEOF'\nfrom googleapiclient.discovery import build\nfrom google.oauth2 import service_account\ncreds = service_account.Credentials.from_service_account_file('key.json', scopes=['https://www.googleapis.com/auth/webmasters.readonly'])\nservice = build('searchconsole', 'v1', credentials=creds)\nresp = service.sitemaps().list(siteUrl='https://alma-enterprises.co.uk/').execute()\nfor s in resp.get('sitemap', []):\n    for c in s.get('contents', []):\n        print(f'Submitted: {c.get(\"submitted\")}  Indexed: {c.get(\"indexed\")}')\nGSCEOF"
     }
   }

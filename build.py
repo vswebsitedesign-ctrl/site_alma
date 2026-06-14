@@ -3,7 +3,7 @@ import json, os, shutil, sys
 
 DOMAIN = "https://alma-enterprises.co.uk"
 EXCLUDED_SLUGS = {'footer', 'navigation', 'cta', 'location', 'service-location', ''}
-LEGITIMATE_FLAT_SLUGS = {'index', 'about-us', 'contact', 'services', 'broughton-moor', 'bereavement-house-clearance-lancaster'}
+LEGITIMATE_FLAT_SLUGS = {'index', 'about-us', 'contact', 'services', 'broughton-moor', 'bereavement-house-clearance-lancaster', 'thank-you'}
 
 def is_excluded(slug):
     if slug in EXCLUDED_SLUGS:
@@ -83,6 +83,11 @@ def build():
     # Copy assets
     if os.path.exists('assets'):
         shutil.copytree('assets', 'build/assets', dirs_exist_ok=True)
+
+    # Copy send.php into build/ so rsync always deploys it
+    import shutil as _shutil
+    if os.path.exists('send.php'):
+        _shutil.copy('send.php', 'build/send.php')
 
     print(f"Built {len([p for p in pages if p['slug'] not in EXCLUDED_SLUGS])} pages (skipped {len(EXCLUDED_SLUGS)} junk slugs)")
     print(f"sitemap.xml generated with {len(sitemap_urls)} URLs")
