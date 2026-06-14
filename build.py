@@ -3,6 +3,15 @@ import json, os, shutil, sys
 
 DOMAIN = "https://alma-enterprises.co.uk"
 EXCLUDED_SLUGS = {'footer', 'navigation', 'cta', 'location', 'service-location', ''}
+LEGITIMATE_FLAT_SLUGS = {'index', 'about-us', 'contact', 'services', 'broughton-moor', 'bereavement-house-clearance-lancaster'}
+
+def is_excluded(slug):
+    if slug in EXCLUDED_SLUGS:
+        return True
+    # Exclude old flat location hub pages — no slash, not a legitimate flat page
+    if '/' not in slug and slug not in LEGITIMATE_FLAT_SLUGS:
+        return True
+    return False
 
 def build():
     pages_path = 'data/pages.json'
@@ -23,7 +32,7 @@ def build():
         slug = page['slug']
 
         # Skip Jekyll template fragments
-        if slug in EXCLUDED_SLUGS:
+        if is_excluded(slug):
             continue
 
         content = page.get('body_content', '')
