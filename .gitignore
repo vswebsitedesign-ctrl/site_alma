@@ -12,3 +12,6 @@ Thumbs.db
 
 # Secrets (if any)
 *.env
+key.json
+*.json:Zone.Identifier
+snapshots/
