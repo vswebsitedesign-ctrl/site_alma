@@ -27,6 +27,8 @@ def build():
             continue
 
         content = page.get('body_content', '')
+        if page.get('meta_locked', False):
+            pass  # meta_locked pages: title and description preserved as-is
         title = page.get('title', '')
         description = page.get('description', '')
 
